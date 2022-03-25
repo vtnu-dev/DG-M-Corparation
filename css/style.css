@@ -89,6 +89,10 @@ body {
   background-color: #232323;
 }
 
+.nav-active {
+  overflow: hidden;
+}
+
 h1.company-name {
   margin-bottom: 0.5em;
   font-size: 3rem;
@@ -360,7 +364,7 @@ h1.company-name {
   display: -ms-grid;
   display: grid;
       grid-template-areas: 'title title title' 'box box box' 'box box box';
-  padding: 6em 2em;
+  padding: 3em 2em;
 }
 
 .info__title {
@@ -399,7 +403,7 @@ h1.company-name {
 
 .info__box-link {
   display: block;
-  margin-left: 25em;
+  margin-left: 50%;
   margin-bottom: 2em;
   color: #d6c78e;
   text-decoration: none;

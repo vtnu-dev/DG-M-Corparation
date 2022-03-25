@@ -13,6 +13,10 @@ body {
 	background-color: $dark;
 }
 
+.nav-active{
+	overflow: hidden;
+}
+
 h1.company-name {
 	margin-bottom: 0.5em;
 	font-size: 3rem;
@@ -246,7 +250,7 @@ h1.company-name {
 		'title title title'
 		'box box box'
 		'box box box';
-	padding: 6em 2em;
+	padding: 3em 2em;
 
 	&__title {
 		grid-area: title;
@@ -275,7 +279,7 @@ h1.company-name {
 
 	&__box-link {
 		display: block;
-		margin-left: 25em;
+		margin-left: 50%;
 		margin-bottom: 2em;
 		color: $gold;
 		text-decoration: none;
