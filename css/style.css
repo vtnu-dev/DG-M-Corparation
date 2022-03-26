@@ -89,7 +89,7 @@ body {
   background-color: #232323;
 }
 
-.nav-active {
+.scroll-disable {
   overflow: hidden;
 }
 
@@ -250,9 +250,6 @@ h1.company-name {
   transition: transform 0.3s, -webkit-transform 0.3s;
   -webkit-transform: translateX(-102%);
           transform: translateX(-102%);
-  overflow: hidden;
-  overflow-y: hidden;
-  overflow-x: hidden;
   z-index: 10;
 }
 
@@ -268,14 +265,18 @@ h1.company-name {
 .nav__link {
   position: relative;
   display: inline-block;
-  color: #191919;
   margin: 0.5em;
   padding: 0.5em;
+  color: #191919;
   font-size: 2.3rem;
   text-transform: uppercase;
   text-decoration: none;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
+}
+
+.nav__link:hover {
+  color: #d6c78e;
 }
 
 .cards {
@@ -363,14 +364,13 @@ h1.company-name {
   position: relative;
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'title title title' 'box box box' 'box box box';
+      grid-template-areas: 'title' 'box' 'box';
   padding: 3em 2em;
 }
 
 .info__title {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
   grid-area: title;
 }
 
@@ -378,7 +378,6 @@ h1.company-name {
   -ms-grid-row: 2;
   -ms-grid-row-span: 2;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
   grid-area: box;
 }
 
@@ -402,19 +401,20 @@ h1.company-name {
 }
 
 .info__box-link {
-  display: block;
-  margin-left: 50%;
+  text-align: right;
   margin-bottom: 2em;
+}
+
+.info__box-link a {
   color: #d6c78e;
   text-decoration: none;
-  text-align: right;
   font-weight: bold;
   cursor: pointer;
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
 
-.info__box-link:hover {
+.info__box-link a:hover {
   color: #9b9165;
 }
 
@@ -531,13 +531,8 @@ h1.company-name {
   font-size: 2rem;
 }
 
+.contact__form-box input,
 .contact__form-box textarea {
-  max-width: 100%;
-  width: 100%;
-  min-width: 100%;
-}
-
-.contact__form-box input, .contact__form-box textarea {
   padding: 1em 2em;
   margin-bottom: 2em;
   width: 100%;
@@ -546,9 +541,14 @@ h1.company-name {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.contact__form-box input:focus, .contact__form-box textarea:focus {
+.contact__form-box input:focus,
+.contact__form-box textarea:focus {
   outline: none;
   border: 1px solid #d6c78e;
+}
+
+.contact__form-box textarea {
+  resize: vertical;
 }
 
 .contact__form-box:nth-child(1) {
@@ -601,20 +601,6 @@ h1.company-name {
 }
 
 @media (min-width: 576px) {
-  .info {
-        grid-template-areas: 'title box' 'title box' 'title box';
-    padding: 10em 2em;
-  }
-  .info__box {
-    display: -ms-grid;
-    display: grid;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: end;
-  }
-  .info__box-img, .info__box-text {
-    max-width: 500px;
-  }
   .info__bg-icon {
     position: absolute;
     display: block;
@@ -677,6 +663,20 @@ h1.company-name {
     -ms-grid-column: 7;
     -ms-grid-column-span: 3;
     grid-column: 7/10;
+  }
+  .info {
+        grid-template-areas: 'title box' 'title box' 'title box';
+    padding: 10em 2em;
+  }
+  .info__box {
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+  }
+  .info__box-img, .info__box-text {
+    max-width: 450px;
   }
   .plans {
     padding: 8em 2em;
@@ -866,6 +866,9 @@ h1.company-name {
   }
   .hamburger {
     display: none;
+  }
+  .info__box-img, .info__box-text {
+    max-width: 550px;
   }
 }
 

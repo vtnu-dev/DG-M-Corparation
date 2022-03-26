@@ -108,6 +108,14 @@
 	.hamburger {
 		display: none;
 	}
+
+	.info {
+		
+		&__box-img,
+		&__box-text {
+			max-width: 550px;
+		}
+    }
 }
 
 @media (min-width: 1200px) {
